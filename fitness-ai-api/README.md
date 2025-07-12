@@ -1,10 +1,4 @@
 # 🏋️ AI-Powered Fitness Assessment Platform
-
-[![AWS](https://img.shields.io/badge/AWS-Cloud-orange)](https://aws.amazon.com/)
-[![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)](https://terraform.io/)
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org/)
-[![Serverless](https://img.shields.io/badge/Architecture-Serverless-green)](https://aws.amazon.com/serverless/)
-
 A production-ready, serverless fitness assessment platform that provides personalized health and fitness calculations using scientific formulas. Built with modern DevOps practices and deployed on AWS cloud infrastructure.
 
 ## 🎯 Background
@@ -21,7 +15,6 @@ The fitness industry often requires expensive equipment or personal trainer cons
 
 This is a full-stack serverless application that demonstrates modern cloud architecture and DevOps practices. The system processes natural language fitness questions and returns scientifically accurate assessments with personalized recommendations.
 
-**Live Demo**: [https://d138ljgsl2hkcc.cloudfront.net](https://d138ljgsl2hkcc.cloudfront.net)
 
 ### Architecture Diagram
 ```
@@ -45,6 +38,25 @@ This is a full-stack serverless application that demonstrates modern cloud archi
 - **Showcase DevOps best practices** with automated deployment
 - **Provide real business value** through accurate fitness assessments
 - **Optimize for cost** using pay-per-use serverless model
+
+## 📝 Project Structure
+
+```
+fitness-ai-api/
+├── terraform/                 # Infrastructure as Code
+│   ├── main.tf               # Main Terraform configuration
+│   ├── variables.tf          # Input variables
+│   └── outputs.tf            # Output values
+├── lambda_functions/          # Serverless functions
+│   ├── fitness_coach.py      # Main assessment logic
+│   └── user_history.py       # History retrieval
+├── frontend/                  # Web application
+│   ├── index.html            # Main webpage
+│   └── config.js             # API configuration
+├── deploy.bat                 # Deployment automation
+└── README.md                 # Project documentation
+```
+
 
 ## ✨ Features
 
@@ -121,9 +133,12 @@ This is a full-stack serverless application that demonstrates modern cloud archi
 ### **Required Software**
 - [AWS CLI](https://aws.amazon.com/cli/) configured with credentials
 - [Terraform](https://terraform.io/downloads.html) v1.0+
-- [PowerShell](https://docs.microsoft.com/en-us/powershell/) (Windows)
+- [Linux] (Windows WSL)
 - [Git](https://git-scm.com/) for version control
 
+```bash
+git clone https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API.git
+```
 ### **AWS Account Setup**
 - AWS account with appropriate permissions
 - IAM user with programmatic access
@@ -187,91 +202,48 @@ Displays important URLs and resource names:
 - `website_url`: CloudFront distribution URL
 - `s3_bucket_name`: S3 bucket for frontend files
 
-## 🧪 Testing the System
+## Testing the System
 
-### **1. Automated Deployment**
-```bash
-# Run the complete deployment script
-./deploy.bat
-```
 
-### **2. Manual Testing Steps**
+### **1. Manual Testing Steps**
 
 #### **Frontend Testing**
 1. Open the CloudFront URL from terraform output
 2. Fill in user profile (age, weight, height, gender, activity level)
 3. Test sample questions:
    - "What is my VO2 max?"
+
+   ![image_alt]()
+
+   ![image_alt]()
+
    - "How many calories should I eat per day?"
+
+   ![image_alt]()
+
+   ![image_alt]()
+
    - "What's my BMI?"
+
+   ![image_alt]()
+
+
+   ![image_alt]()
+
+
    - "What are my heart rate zones?"
 
-#### **API Testing**
-```bash
-# Test API directly
-curl -X POST [API_ENDPOINT]/coach \
-  -H "Content-Type: application/json" \
-  -d '{
-    "question": "What is my VO2 max?",
-    "user_data": {
-      "age": 25,
-      "weight": 75,
-      "height": 180,
-      "gender": "male",
-      "activity_level": "very"
-    }
-  }'
-```
+   ![image_alt]()
 
-#### **History Testing**
-```bash
-# Test user history endpoint
-curl -X GET "[API_ENDPOINT]/history?user_id=[USER_ID]"
-```
+   ![image_alt]()
 
-### **3. Monitoring and Logs**
-```bash
-# View Lambda logs
-aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/fitness"
 
-# Get recent log events
-aws logs get-log-events --log-group-name "/aws/lambda/fitness-coach-api" --log-stream-name [STREAM_NAME]
-```
-
-## 📊 CI/CD System Applications
-
-### **Current Implementation**
-- **Infrastructure as Code**: Terraform manages all resources
-- **Automated Deployment**: PowerShell scripts for complete deployment
-- **Version Control Ready**: Git-friendly project structure
-- **Environment Separation**: Configurable for dev/staging/prod
-
-### **CI/CD Enhancement Opportunities**
-```yaml
-# Example GitHub Actions workflow
-name: Deploy Fitness Platform
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-      - name: Terraform Apply
-        run: |
-          cd terraform
-          terraform init
-          terraform apply -auto-approve
-      - name: Deploy Frontend
-        run: |
-          aws s3 sync frontend/ s3://${{ env.S3_BUCKET }}/
-```
 
 ### **Monitoring Integration**
 - **CloudWatch Dashboards**: Custom metrics and alarms
+
+![image_alt]()
+
 - **Error Tracking**: Automated error notifications
 - **Performance Monitoring**: Response time and usage analytics
 - **Cost Monitoring**: AWS billing alerts and optimization
@@ -291,43 +263,3 @@ jobs:
 - **Input Validation**: Sanitized user inputs
 - **No Sensitive Data**: No PII stored unnecessarily
 
-## 📝 Project Structure
-
-```
-fitness-ai-api/
-├── terraform/                 # Infrastructure as Code
-│   ├── main.tf               # Main Terraform configuration
-│   ├── variables.tf          # Input variables
-│   └── outputs.tf            # Output values
-├── lambda_functions/          # Serverless functions
-│   ├── fitness_coach.py      # Main assessment logic
-│   └── user_history.py       # History retrieval
-├── frontend/                  # Web application
-│   ├── index.html            # Main webpage
-│   └── config.js             # API configuration
-├── deploy.bat                 # Deployment automation
-└── README.md                 # Project documentation
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙋‍♂️ Support
-
-For questions or support:
-- Create an issue in the repository
-- Check CloudWatch logs for debugging
-- Review Terraform documentation for infrastructure questions
-
----
-
-**Built with ❤️ using AWS Serverless Architecture and Modern DevOps Practices**
