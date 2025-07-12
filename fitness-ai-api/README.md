@@ -215,17 +215,22 @@ Displays important URLs and resource names:
 
    ![image_alt]()
 
+
    ![image_alt]()
+
 
    - "How many calories should I eat per day?"
 
    ![image_alt]()
 
+
    ![image_alt]()
+
 
    - "What's my BMI?"
 
    ![image_alt]()
+
 
 
    ![image_alt]()
@@ -234,6 +239,8 @@ Displays important URLs and resource names:
    - "What are my heart rate zones?"
 
    ![image_alt]()
+
+
 
    ![image_alt]()
 
@@ -245,21 +252,30 @@ Displays important URLs and resource names:
 ![image_alt]()
 
 - **Error Tracking**: Automated error notifications
+
 - **Performance Monitoring**: Response time and usage analytics
+
 - **Cost Monitoring**: AWS billing alerts and optimization
 
 ## 📈 Performance Metrics
 
 - **Response Time**: < 200ms average
+
 - **Availability**: 99.9% uptime (AWS SLA)
+
 - **Scalability**: Auto-scales to handle traffic spikes
+
 - **Cost**: Pay-per-request, typically < $1/month for personal use
 
 ## 🔒 Security Features
 
 - **IAM Roles**: Least privilege access
+
 - **HTTPS Only**: SSL/TLS encryption
+
 - **CORS Configuration**: Controlled cross-origin access
+
 - **Input Validation**: Sanitized user inputs
+
 - **No Sensitive Data**: No PII stored unnecessarily
 
