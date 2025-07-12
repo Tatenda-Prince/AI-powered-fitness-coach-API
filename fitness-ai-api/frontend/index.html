@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fitness Coach</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-section h3 {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .profile-grid .form-group {
+            margin-bottom: 0;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .quick-questions {
+            margin-bottom: 1.5rem;
+        }
+        
+        .quick-questions p {
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .quick-btn {
+            display: inline-block;
+            margin: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: #e9ecef;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .history-btn {
+            width: auto;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .history-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+        }
+        
+        .history-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .history-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+            font-size: 1rem;
+        }
+        
+        .history-meta {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            margin: 1rem 0;
+        }
+        
+        .result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .result h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .result .response {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            color: #555;
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .assessment-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error {
+            background: #fee;
+            border-left-color: #e74c3c;
+            color: #c0392b;
+        }
+        
+        .user-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏃‍♂️ AI Fitness Assessment</h1>
+        
+        <!-- User Profile Section -->
+        <div class="profile-section">
+            <h3>Your Profile (Optional - helps with accuracy)</h3>
+            <div class="profile-grid">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="25">
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" placeholder="70">
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" placeholder="175">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="activity">Activity Level</label>
+                    <select id="activity">
+                        <option value="">Select</option>
+                        <option value="sedentary">Sedentary</option>
+                        <option value="light">Lightly Active</option>
+                        <option value="moderate">Moderately Active</option>
+                        <option value="very">Very Active</option>
+                        <option value="extra">Extremely Active</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Question Section -->
+        <form id="assessmentForm">
+            <div class="form-group">
+                <label for="question">Ask me anything about your fitness:</label>
+                <textarea 
+                    id="question" 
+                    name="question" 
+                    placeholder="Examples:\n• What is my VO2 max?\n• What's my estimated body fat percentage?\n• How many calories should I eat per day?\n• What's my target heart rate for cardio?\n• Am I at a healthy weight?"
+                    required
+                ></textarea>
+            </div>
+            
+            <div class="quick-questions">
+                <p>Quick questions:</p>
+                <button type="button" class="quick-btn" onclick="setQuestion('What is my VO2 max?')">VO2 Max</button>
+                <button type="button" class="quick-btn" onclick="setQuestion('What is my estimated body fat percentage?')">Body Fat %</button>
+                <button type="button" class="quick-btn" onclick="setQuestion('What is my BMR and daily calorie needs?')">BMR/Calories</button>
+                <button type="button" class="quick-btn" onclick="setQuestion('What should my target heart rate be for cardio?')">Heart Rate</button>
+            </div>
+            
+            <button type="submit" id="submitBtn">
+                Get AI Assessment
+            </button>
+        </form>
+        
+        <div id="loading" class="loading" style="display: none;">
+            🤖 Creating your personalized workout plan...
+        </div>
+        
+        <div id="result" style="display: none;"></div>
+        
+        <!-- History Section -->
+        <div class="history-section" style="display: none;" id="historySection">
+            <h3>📊 Your Assessment History</h3>
+            <div id="historyContent"></div>
+        </div>
+        
+        <button type="button" id="historyBtn" class="history-btn" onclick="toggleHistory()">
+            View My History
+        </button>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        const API_URL = `${window.CONFIG.API_URL}/coach`;
+        const HISTORY_URL = `${window.CONFIG.API_URL}/history`;
+        
+        function setQuestion(questionText) {
+            document.getElementById('question').value = questionText;
+        }
+        
+        function getUserData() {
+            const userData = {};
+            const age = document.getElementById('age').value;
+            const weight = document.getElementById('weight').value;
+            const height = document.getElementById('height').value;
+            const gender = document.getElementById('gender').value;
+            const activity = document.getElementById('activity').value;
+            
+            if (age) userData.age = parseInt(age);
+            if (weight) userData.weight = parseFloat(weight);
+            if (height) userData.height = parseInt(height);
+            if (gender) userData.gender = gender;
+            if (activity) userData.activity_level = activity;
+            
+            return userData;
+        }
+        
+        async function toggleHistory() {
+            const historySection = document.getElementById('historySection');
+            const historyBtn = document.getElementById('historyBtn');
+            const userId = localStorage.getItem('fitness_user_id');
+            
+            if (!userId) {
+                alert('No history available. Complete an assessment first!');
+                return;
+            }
+            
+            if (historySection.style.display === 'none') {
+                historyBtn.textContent = 'Loading...';
+                historyBtn.disabled = true;
+                
+                try {
+                    const response = await fetch(`${HISTORY_URL}?user_id=${userId}`);
+                    const data = await response.json();
+                    
+                    if (response.ok && data.assessments.length > 0) {
+                        let historyHtml = '';
+                        data.assessments.forEach(assessment => {
+                            historyHtml += `
+                                <div class="history-item">
+                                    <h4>${assessment.question}</h4>
+                                    <div class="history-meta">
+                                        <span class="assessment-type">${assessment.assessment_type.replace('_', ' ').toUpperCase()}</span>
+                                        • ${new Date(assessment.timestamp).toLocaleString()}
+                                    </div>
+                                    <div class="response">${assessment.ai_response}</div>
+                                </div>
+                            `;
+                        });
+                        document.getElementById('historyContent').innerHTML = historyHtml;
+                        historySection.style.display = 'block';
+                        historyBtn.textContent = 'Hide History';
+                    } else {
+                        alert('No assessment history found.');
+                    }
+                } catch (error) {
+                    console.error('Error loading history:', error);
+                    alert('Failed to load history. Please try again.');
+                } finally {
+                    historyBtn.disabled = false;
+                }
+            } else {
+                historySection.style.display = 'none';
+                historyBtn.textContent = 'View My History';
+            }
+        }
+        
+        document.getElementById('assessmentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const question = document.getElementById('question').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+            
+            if (!question) {
+                alert('Please ask a fitness question!');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            result.style.display = 'none';
+            
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: question,
+                        user_data: getUserData(),
+                        user_id: localStorage.getItem('fitness_user_id') || undefined
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Save user ID for future requests
+                    if (data.user_id) {
+                        localStorage.setItem('fitness_user_id', data.user_id);
+                    }
+                    
+                    result.innerHTML = `
+                        <div class="assessment-type">${data.assessment_type.replace('_', ' ').toUpperCase()}</div>
+                        <h3>AI Fitness Assessment</h3>
+                        <div class="response">${data.response}</div>
+                        <div class="user-info">
+                            <strong>Question:</strong> ${question}<br>
+                            <strong>User ID:</strong> ${data.user_id}<br>
+                            <strong>Generated:</strong> ${new Date(data.timestamp).toLocaleString()}
+                        </div>
+                    `;
+                    result.className = 'result';
+                } else {
+                    result.innerHTML = `
+                        <h3>Error</h3>
+                        <p>${data.error || 'Something went wrong. Please try again.'}</p>
+                    `;
+                    result.className = 'result error';
+                }
+                
+                result.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                result.innerHTML = `
+                    <h3>Connection Error</h3>
+                    <p>Unable to connect to the fitness coach API. Please check your internet connection and try again.</p>
+                `;
+                result.className = 'result error';
+                result.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                loading.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
