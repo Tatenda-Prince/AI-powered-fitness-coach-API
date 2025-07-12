@@ -87,16 +87,5 @@ out/
 coverage/
 *.lcov
 
-# Lambda Dependencies (keep source, ignore packages)
-lambda_functions/bin/
-lambda_functions/certifi/
-lambda_functions/charset_normalizer/
-lambda_functions/idna/
-lambda_functions/importlib_resources/
-lambda_functions/openai/
-lambda_functions/requests/
-lambda_functions/tqdm/
-lambda_functions/urllib3/
-lambda_functions/*-dist-info/
-lambda_functions/zipp.py
-lambda_functions/lambda_functions/
+# Lambda Dependencies (no external dependencies needed)
+# boto3 is provided by AWS Lambda runtime
