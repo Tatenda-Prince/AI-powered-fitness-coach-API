@@ -214,7 +214,7 @@ Displays important URLs and resource names:
 
    - "How many calories should I eat per day?"
 
-   ![image_alt]()
+   ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/b1fad2fccc18e7e6178d2b658a49de44fa1be7bb/fitness-ai-api/img/Screenshot%202025-07-12%20231010.png)
 
 
    ![image_alt]()
