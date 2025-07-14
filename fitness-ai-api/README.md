@@ -235,7 +235,7 @@ Displays important URLs and resource names:
 
 
 
-   ![image_alt]()
+   ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/34968282d9086f7a12f15eac3a5382f80bdd25c6/fitness-ai-api/img/Screenshot%202025-07-12%20231226.png)
 
 
 
