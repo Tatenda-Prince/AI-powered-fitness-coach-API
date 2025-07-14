@@ -231,7 +231,7 @@ Displays important URLs and resource names:
 
    - "What are my heart rate zones?"
 
-   ![image_alt]()
+   ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/aa495a0ea0c6b8f9d0d515507199bf316f53cb73/fitness-ai-api/img/Screenshot%202025-07-12%20231213.png)
 
 
 
