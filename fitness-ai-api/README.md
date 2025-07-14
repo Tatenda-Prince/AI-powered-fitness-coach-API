@@ -192,6 +192,9 @@ Displays important URLs and resource names:
 - `website_url`: CloudFront distribution URL
 - `s3_bucket_name`: S3 bucket for frontend files
 
+  ![image_alt]()
+
+
 ## Testing the System
 
 
