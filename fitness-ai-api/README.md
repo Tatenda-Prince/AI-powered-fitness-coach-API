@@ -222,7 +222,7 @@ Displays important URLs and resource names:
 
    - "What's my BMI?"
 
-   ![image_alt]()
+   ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/4f9a35deee2d35c5b932466d73a270d7f91b7b75/fitness-ai-api/img/Screenshot%202025-07-12%20231112.png)
 
 
 
