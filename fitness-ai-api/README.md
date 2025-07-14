@@ -242,7 +242,7 @@ Displays important URLs and resource names:
 ### **Monitoring Integration**
 - **CloudWatch Dashboards**: Custom metrics and alarms
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/a39b9f7a07668f77e56fdb9ac4598783a64e653f/fitness-ai-api/img/Screenshot%202025-07-12%20231914.png)
 
 - **Error Tracking**: Automated error notifications
 
