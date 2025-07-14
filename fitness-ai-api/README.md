@@ -206,7 +206,7 @@ Displays important URLs and resource names:
 3. Test sample questions:
    - "What is my VO2 max?"
 
-   ![image_alt]()
+   ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/3e1c0cf2296807e8e77636420622bbe68ff1258a/fitness-ai-api/img/Screenshot%202025-07-12%20230434.png)
 
 
    ![image_alt]()
