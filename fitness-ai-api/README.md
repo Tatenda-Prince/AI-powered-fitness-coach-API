@@ -192,7 +192,7 @@ Displays important URLs and resource names:
 - `website_url`: CloudFront distribution URL
 - `s3_bucket_name`: S3 bucket for frontend files
 
-  ![image_alt]()
+  ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/9dec632b7554fb1ac252421724af05e535f78d28/fitness-ai-api/img/Screenshot%202025-07-12%20231958.png)
 
 
 ## Testing the System
