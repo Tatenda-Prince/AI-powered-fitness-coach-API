@@ -13,7 +13,7 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
             color: #333;
             line-height: 1.6;
@@ -22,15 +22,15 @@
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
             text-align: center;
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #667eea;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1e293b;
         }
         
         .container {
@@ -40,12 +40,13 @@
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
             margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
         .title {
@@ -57,10 +58,12 @@
         }
         
         .profile-section {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 16px;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 20px;
             margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         
         .profile-grid {
@@ -94,8 +97,8 @@
         
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
         
         textarea {
@@ -105,21 +108,23 @@
         
         button {
             width: 100%;
-            padding: 1rem 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.2rem 1.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 16px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
         }
         
         button:disabled {
@@ -130,40 +135,43 @@
         
         .quick-btn {
             display: inline-block;
-            margin: 0.25rem;
-            padding: 0.75rem 1.25rem;
-            background: rgba(102, 126, 234, 0.1);
-            border: 2px solid rgba(102, 126, 234, 0.2);
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            margin: 0.3rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            color: #667eea;
+            color: #3b82f6;
             width: auto;
+            text-transform: capitalize;
         }
         
         .quick-btn:hover {
-            background: #667eea;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
             color: white;
-            border-color: #667eea;
+            border-color: transparent;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
         }
         
         .loading {
             text-align: center;
-            color: #667eea;
+            color: #3b82f6;
             margin: 2rem 0;
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
         
         .result {
             margin-top: 2rem;
-            padding: 2rem;
-            background: #f8fafc;
-            border-radius: 16px;
+            padding: 2.5rem;
+            background: #ffffff;
+            border-radius: 20px;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
         .result h3 {
@@ -182,13 +190,15 @@
         
         .assessment-type {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .error {
@@ -221,16 +231,16 @@
         }
         
         .feature-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #4ade80;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #3b82f6;
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">🏋️ FitAssess Pro</div>
-        <p>Professional Fitness Assessment Platform</p>
+        <div class="logo">💪 FitAssess Pro</div>
+        <p style="color: #666; font-weight: 500; margin-top: 0.5rem;">Your Personal AI Fitness Coach</p>
     </header>
     
     <div class="container">
@@ -239,21 +249,21 @@
             
             <div class="features">
                 <div class="feature">
-                    <div class="feature-number">90%+</div>
-                    <div>Accuracy</div>
+                    <div class="feature-number">🎯 90%+</div>
+                    <div style="font-weight: 600;">Accuracy</div>
                 </div>
                 <div class="feature">
-                    <div class="feature-number">FREE</div>
-                    <div>Always</div>
+                    <div class="feature-number">🆓 FREE</div>
+                    <div style="font-weight: 600;">Always</div>
                 </div>
                 <div class="feature">
-                    <div class="feature-number">24/7</div>
-                    <div>Available</div>
+                    <div class="feature-number">⏰ 24/7</div>
+                    <div style="font-weight: 600;">Available</div>
                 </div>
             </div>
             
             <div class="profile-section">
-                <h3>Your Profile (Optional - improves accuracy)</h3>
+                <h3 style="color: #1e293b; margin-bottom: 1.5rem; font-weight: 700;">📊 Your Profile (Optional - improves accuracy)</h3>
                 <div class="profile-grid">
                     <div class="form-group">
                         <label for="age">Age</label>
@@ -291,7 +301,7 @@
             
             <form id="assessmentForm">
                 <div class="form-group">
-                    <label for="question">Ask me anything about your fitness:</label>
+                    <label for="question" style="color: #1e293b; font-weight: 600; font-size: 1.1rem;">💬 Ask me anything about your fitness:</label>
                     <textarea 
                         id="question" 
                         name="question" 
@@ -301,7 +311,7 @@
                 </div>
                 
                 <div style="margin-bottom: 1.5rem;">
-                    <p style="margin-bottom: 0.5rem; color: #666; font-size: 0.9rem;">Quick questions:</p>
+                    <p style="margin-bottom: 1rem; color: #1e293b; font-size: 1rem; font-weight: 600;">⚡ Quick questions:</p>
                     <button type="button" class="quick-btn" onclick="setQuestion('What is my VO2 max?')">VO2 Max</button>
                     <button type="button" class="quick-btn" onclick="setQuestion('How many calories should I eat per day?')">Calories</button>
                     <button type="button" class="quick-btn" onclick="setQuestion('What is my BMI?')">BMI</button>
@@ -309,12 +319,12 @@
                 </div>
                 
                 <button type="submit" id="submitBtn">
-                    Get AI Assessment
+                    🚀 Get AI Assessment
                 </button>
             </form>
             
             <div id="loading" class="loading" style="display: none;">
-                🤖 Analyzing your fitness data...
+                🔄 Analyzing your fitness data...
             </div>
             
             <div id="result" style="display: none;"></div>

@@ -18,7 +18,10 @@ This is a full-stack serverless application that demonstrates modern cloud archi
 
 ### Architecture Diagram
 
+<<<<<<< HEAD
 ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/0aab79f913327e758671d991ef5ca73e1555cd74/fitness-ai-api/img/Screenshot%202025-07-12%20202007.png)
+=======
+>>>>>>> 095b3eb (modified readme file)
 
 ## 🎯 Project Objectives
 
@@ -66,13 +69,6 @@ fitness-ai-api/
 - **Error Handling**: Comprehensive error management
 - **Logging**: CloudWatch integration for monitoring
 
-### 🌐 User Experience
-- **Responsive Design**: Works on all devices
-- **Natural Language**: Ask questions in plain English
-- **Quick Actions**: Pre-defined question buttons
-- **History Viewer**: Track assessment progress
-- **Real-time Results**: Instant calculations
-
 ## 🛠️ Technologies Used
 
 ### **Cloud Infrastructure**
@@ -97,7 +93,7 @@ fitness-ai-api/
 ### **DevOps Tools**
 - **AWS CLI**: Command-line interface
 - **Git**: Version control (ready)
-- **PowerShell**: Deployment automation
+
 
 ## 💼 Use Cases
 
@@ -112,11 +108,7 @@ fitness-ai-api/
 - Corporate wellness program platforms
 - Healthcare provider fitness screening
 
-### **Business Integration**
-- Fitness app backend API
-- Wearable device data processing
-- Health insurance risk assessment
-- Telemedicine platform integration
+
 
 ## 📋 Prerequisites
 
@@ -134,27 +126,7 @@ git clone https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API.git
 - IAM user with programmatic access
 - AWS CLI configured with credentials
 
-### **Required AWS Permissions**
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "lambda:*",
-        "apigateway:*",
-        "dynamodb:*",
-        "s3:*",
-        "cloudfront:*",
-        "iam:*",
-        "logs:*"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
+
 
 ## 🚀 Terraform Workflow
 
@@ -204,7 +176,8 @@ Displays important URLs and resource names:
 1. Open the CloudFront URL from terraform output
 2. Fill in user profile (age, weight, height, gender, activity level)
 3. Test sample questions:
-   - "What is my VO2 max?"
+
+   - **"What is my VO2 max?"**
 
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/3e1c0cf2296807e8e77636420622bbe68ff1258a/fitness-ai-api/img/Screenshot%202025-07-12%20230434.png)
 
@@ -212,7 +185,7 @@ Displays important URLs and resource names:
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/73c11e7271dfd4cb2f6cf840aa2c989f9862b9fb/fitness-ai-api/img/Screenshot%202025-07-12%20230938.png)
 
 
-   - "How many calories should I eat per day?"
+   - **"How many calories should I eat per day?"**
 
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/b1fad2fccc18e7e6178d2b658a49de44fa1be7bb/fitness-ai-api/img/Screenshot%202025-07-12%20231010.png)
 
@@ -220,7 +193,7 @@ Displays important URLs and resource names:
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/7d763775b9b168509eba824a95b6d577f4a8fb59/fitness-ai-api/img/Screenshot%202025-07-12%20231033.png)
 
 
-   - "What's my BMI?"
+   - **"What's my BMI?"**
 
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/4f9a35deee2d35c5b932466d73a270d7f91b7b75/fitness-ai-api/img/Screenshot%202025-07-12%20231112.png)
 
@@ -229,7 +202,7 @@ Displays important URLs and resource names:
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/9c52f60424f4e92ff14e6c360add7b9f49ff1f5c/fitness-ai-api/img/Screenshot%202025-07-12%20231124.png)
 
 
-   - "What are my heart rate zones?"
+   - **"What are my heart rate zones?"**
 
    ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/aa495a0ea0c6b8f9d0d515507199bf316f53cb73/fitness-ai-api/img/Screenshot%202025-07-12%20231213.png)
 
@@ -254,7 +227,7 @@ Displays important URLs and resource names:
 
 - **Response Time**: < 200ms average
 
-- **Availability**: 99.9% uptime (AWS SLA)
+- **Availability**: 99.9% uptime 
 
 - **Scalability**: Auto-scales to handle traffic spikes
 
@@ -264,11 +237,4 @@ Displays important URLs and resource names:
 
 - **IAM Roles**: Least privilege access
 
-- **HTTPS Only**: SSL/TLS encryption
-
-- **CORS Configuration**: Controlled cross-origin access
-
-- **Input Validation**: Sanitized user inputs
-
-- **No Sensitive Data**: No PII stored unnecessarily
 
