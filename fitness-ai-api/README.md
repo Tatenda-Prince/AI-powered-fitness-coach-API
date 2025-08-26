@@ -18,10 +18,9 @@ This is a full-stack serverless application that demonstrates modern cloud archi
 
 ### Architecture Diagram
 
-<<<<<<< HEAD
+
 ![image_alt](https://github.com/Tatenda-Prince/AI-powered-fitness-coach-API/blob/0aab79f913327e758671d991ef5ca73e1555cd74/fitness-ai-api/img/Screenshot%202025-07-12%20202007.png)
-=======
->>>>>>> 095b3eb (modified readme file)
+
 
 ## 🎯 Project Objectives
 
